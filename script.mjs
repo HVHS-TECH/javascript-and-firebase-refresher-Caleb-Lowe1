@@ -2,7 +2,7 @@
 
 
 function start() {
-spaceForJavaScriptOutput.innerHTML
-var messageSpace = getElementbyId("welcomeMessage");
+
+buttonPressed.innerHTML = "you pressed the button"
 messageSpace.innerHTML = "You've connected to the JavaScript!";
 }
