@@ -61,7 +61,7 @@ function fb_initialise() {
   const app = initializeApp(firebaseConfig);
   const firebaseGameDB = getDatabase(app);
   console.info(firebaseGameDB);
-  document.getElementById("p_fbInitialise").innerHTML = "Button Clicked";
+  
 }
 var currentUser = null;
 var userId = null;
@@ -97,5 +97,5 @@ function fb_authenticate() {
       //❌ Code for an authentication error goes here
       console.log("authentication error")
     });
-  document.getElementById("p_fbAuthenticate").innerHTML = "Authentication success"
+ 
 };
