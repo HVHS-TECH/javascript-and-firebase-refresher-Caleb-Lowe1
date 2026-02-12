@@ -9,16 +9,31 @@
 <script src="main.mjs"></script>
 
 <body>
-    
-    
-    <h1 id="messageSpace">You haven't connected the JavaScript yet</h1>
-    <button onClick="start()">start</button>
-     <button onclick="fb_initialise()">t03: initialise firebase</button>
-                <button onclick="fb_authenticate()">t04: authenticate</button>
-      
-    
-    <p>Your tasks:
+        <p>Your tasks:
         <h2 id="buttonPressed">JavaScript</h2>
+        <button onclick="start()">start</button>
+    <form onsubmit="return false;">
+        <label for="name">Username:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="name">Age:</label>
+        <input type="text" id="age" age="age" required />
+        <label for="name">Favourite Colour:</label>
+        <input type="text" id="colour" colour="colour" required />
+        <input type = "submit" onclick= "getFormInput(); fb_WriteRec(); fb_WriteRecPrivate()">
+    
+    
+    </form>
+    <h3 id = "javaScriptOutput">Form test</h3>
+    <div id="spaceForJavaScriptOutput">
+    <h1 id="messageSpace">You haven't connected the JavaScript yet</h1>
+    
+     <button onclick="fb_initialise()">t03: initialise firebase</button>
+    <button onclick="fb_authenticate()">t04: authenticate</button>
+          
+   
+
+    
+
     <h2>JavaScript </h2>
     <ul>
         <li>Connect the JavaScript file - this page will tell you when it is done</li>
