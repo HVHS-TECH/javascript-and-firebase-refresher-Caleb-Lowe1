@@ -23,6 +23,8 @@ import { getDatabase, ref, update, remove }
   from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { get }
+    from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
 
 /**************************************************************/
@@ -33,7 +35,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged }
 
 
 
-export { fb_initialise, fb_authenticate, fb_WriteRec, fb_WriteRecPrivate}
+export { fb_initialise, fb_authenticate, fb_WriteRec, fb_WriteRecPrivate, fb_ReadRec}
 /******************************************************/
 // fb_login()
 // Called by html LOGIN button
@@ -180,3 +182,32 @@ function fb_WriteRecPrivate() {
 
 //Writing the score for the game: Coin Collector to the database
 
+function fb_ReadRec() {
+    console.log('%c fb_ReadRec(): ', 'color: ' + COL_C + '; background-color: ' + COL_B + ';');
+    const DB = getDatabase()
+    const dbReference= ref(DB, "Public/");
+
+    get(dbReference).then((snapshot) => {
+
+        var fb_data = snapshot.val();
+
+        if (fb_data != null) {
+
+            //✅ Code for a successful read goes here
+            console.log("successful read");
+            console.log(fb_data);
+        } else {
+
+            //✅ Code for no record found goes here
+            console.log("no record found");
+            console.log(fb_data);
+        }
+
+    }).catch((error) => {
+
+        //❌ Code for a read error goes here
+        console.log("fail read");
+        console.log(fb_data);
+
+    });
+}
